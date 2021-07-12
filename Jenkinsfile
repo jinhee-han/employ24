@@ -1,14 +1,39 @@
-echo "---build start---"
+node {
+    	stage('Clone repository') {
+		checkout scm
+    	}
+	stage('Build image') {
+		sh """
+			#!/bin/bash
+			# Construct Image Name
+			IMAGE=employ
 
-stage('Checkout Stage') {
-    echo "---Checkout---"
-}
+			docker build \
+			-t \${IMAGE} \
 
-stage('Build Stage') {
-    echo "---Build Stage---"
-        //docker container ls
-}
+		"""
+	}
+	stage('Push image') {
+		sh """
+			#!/bin/bash
 
-stage('Push Stage') {
-    echo "---Push Stage---"
+
+			docker push employ
+		"""
+	}
+	stage('Remove image') {
+		sh """
+			#!/bin/bash
+
+			docker rm -f employ
+
+		"""
+	}
+	stage('Run image') {
+		sh """
+			#!/bin/bash
+
+			docker run --name employ -p 8888:8080 -d employ
+		"""
+	}
 }
