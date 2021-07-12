@@ -7,6 +7,7 @@ node {
 			#!/bin/bash
 			# Construct Image Name
 			IMAGE=employ
+			cd \${IMAGE}
 			docker build -t \${IMAGE} .
 		"""
 	}
