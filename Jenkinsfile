@@ -5,9 +5,7 @@ node {
 	stage('Build image') {
 		sh """
 			#!/bin/bash
-			# Construct Image Name
-			IMAGE=employ
-			sudo docker build -t \${IMAGE} .
+			docker build -t employ24 .
 		"""
 	}
 	stage('Push image') {
