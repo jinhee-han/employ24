@@ -6,7 +6,7 @@ node {
 		sh """
 			#!/bin/bash
 			ls
-			ls  -al
+			docker build -t employ24 .
 		"""
 	}
 	stage('Push image') {
