@@ -5,7 +5,8 @@ node {
 	stage('Build image') {
 		sh """
 			#!/bin/bash
-			docker build -t employ24 .
+			chmod +x gradlew
+			./gradlew build
 		"""
 	}
 	stage('Push image') {
