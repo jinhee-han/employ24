@@ -5,8 +5,8 @@ node {
 	stage('Build image') {
 		sh """
 			#!/bin/bash
-			cd employ24
-			docker build -t employ24 .
+			ls
+			ls  -al
 		"""
 	}
 	stage('Push image') {
