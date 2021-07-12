@@ -17,10 +17,6 @@ public class BplcController {
     @Autowired
     private BplcService bplcService;
 
-    @GetMapping("/")
-    public String jenkins(){
-        return "jenkins";
-    }
     @GetMapping("/bplc")
     public List<Bplc> getAllBpcl(){
         return bplcService.findAll();
