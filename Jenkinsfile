@@ -7,8 +7,7 @@ node {
 			#!/bin/bash
 			# Construct Image Name
 			IMAGE=employ
-			cd \${IMAGE}
-			docker build -t \${IMAGE} .
+			sudo docker build -t \${IMAGE} .
 		"""
 	}
 	stage('Push image') {
