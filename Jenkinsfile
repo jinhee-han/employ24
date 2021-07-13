@@ -8,15 +8,15 @@ node {
 			ls
 			chmod +x gradlew
 			./gradlew build
-			docker build -t employ .
+			docker build -t employ24 .
 		"""
 	}
 	stage('Push image') {
 		sh """
 			#!/bin/bash
 
-			docker image tag employ localhost:8888/employ
-			docker push localhost:8888/employ
+			docker image tag employ localhost:5000/employ24
+			docker push localhost:5000/employ24
 		"""
 	}
 	stage('Remove image') {
@@ -24,7 +24,7 @@ node {
 			#!/bin/bash
 
 
-			docker rm -f employ
+			docker rm -f employ24
 			docker system prune -af
 		"""
 	}
@@ -32,7 +32,7 @@ node {
 		sh """
 			#!/bin/bash
 
-			docker run --name employ -p 8888:8080 -d localhost:8888/employ
+			docker run --name employ24 -p 8888:8080 -d localhost:5000/employ24
 		"""
 	}
 }
