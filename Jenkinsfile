@@ -15,7 +15,7 @@ node {
 		sh """
 			#!/bin/bash
 
-			docker image tag employ localhost:5000/employ24
+			docker image tag employ24 localhost:5000/employ24
 			docker push localhost:5000/employ24
 		"""
 	}
