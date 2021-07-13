@@ -6,6 +6,8 @@ node {
 		sh """
 			#!/bin/bash
 			ls
+			chmod +x gradlew
+			./gradlew build
 			docker build -t employ24 .
 		"""
 	}
