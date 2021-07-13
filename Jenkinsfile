@@ -3,11 +3,7 @@ node {
 		checkout scm
     	}
 	stage('Build image') {
-		sh """
-			#!/bin/bash
-			ls
-			docker build -t employ24 .
-		"""
+		sh 'docker build -t employ24 .'
 	}
 	stage('Push image') {
 		sh """
