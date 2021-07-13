@@ -2,8 +2,16 @@ node {
     	stage('Clone repository') {
 		checkout scm
     	}
+    	stage('Initialize'){
+                def dockerHome = tool 'employDocker'
+                env.PATH = "${dockerHome}/bin:${env.PATH}"
+        }
 	stage('Build image') {
-		sh 'docker build -t employ24 .'
+		sh """
+			#!/bin/bash
+			ls
+			docker build -t employ24 .
+		"""
 	}
 	stage('Push image') {
 		sh """
