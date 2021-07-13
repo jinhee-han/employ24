@@ -23,7 +23,6 @@ node {
 		sh """
 			#!/bin/bash
 
-
 			docker rm -f employ24
 			docker system prune -af
 		"""
