@@ -11,30 +11,32 @@ import javax.persistence.Id;
 @Getter
 @ToString
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class EmeaIslnZip {
+public class EmeaRecp {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String bplcSn; //사업장연번
-    private String ty; //유형
     private String bcno; //사업장고객번호
     private String bzmn; //사업장관리번호
     private String bpcn; //사업장명
-    private String tpsn; //대상자연번
-    private String tcno; //대상자고객번호
-    private String zip; //우편번호
+    private String cvplRcno; //민원접수번호 
+    private String fmcd; //서식코드
+    private String fmnm; //서식명
+    private String pmde; //지급일
+    private String pmam; //지급액
 
     @Builder
-    public EmeaIslnZip(Long id, String bplcSn, String ty, String bcno, String bzmn, String bpcn, String tpsn, String tcno, String zip) {
+    public EmeaRecp(Long id, String bplcSn, String bcno, String bzmn, String bpcn, String cvplRcno, String fmcd, String fmnm, String pmde, String pmam) {
         this.id = id;
         this.bplcSn = bplcSn;
-        this.ty = ty;
         this.bcno = bcno;
         this.bzmn = bzmn;
         this.bpcn = bpcn;
-        this.tpsn = tpsn;
-        this.tcno = tcno;
-        this.zip = zip;
+        this.cvplRcno = cvplRcno;
+        this.fmcd = fmcd;
+        this.fmnm = fmnm;
+        this.pmde = pmde;
+        this.pmam = pmam;
     }
 }
