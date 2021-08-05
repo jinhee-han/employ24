@@ -21,7 +21,7 @@ public class BplcController {
     }
 
     @GetMapping("/bplc/{bplcCno}")
-    public List<Bplc> getBpcl(@PathVariable String bplcCno){
+    public Bplc getBpcl(@PathVariable String bplcCno){
         return bplcService.findByBplcCno(bplcCno);
     }
 }

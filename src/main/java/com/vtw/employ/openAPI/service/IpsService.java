@@ -18,7 +18,11 @@ public class IpsService {
         return ipsRepository.findAll();
     }
 
-    public List<Ips> findByBplcCno(String bplcCno) {
+    public Ips findByBplcCno(String bplcCno) {
         return ipsRepository.findByBplcCno(bplcCno);
+    }
+
+    public Ips findByBplcCnoAndTmpCno(String bplcCno, String tmpCno) {
+        return ipsRepository.findByBplcCnoAndTmpCno(bplcCno,tmpCno);
     }
 }

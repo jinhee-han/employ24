@@ -15,13 +15,18 @@ public class IpsController {
     @Autowired
     private IpsService ipsService;
 
-    @GetMapping("/ips")
+    /*@GetMapping("/ips")
     public List<Ips> getAllBpcl(){
         return ipsService.findAll();
-    }
+    }*/
 
     @GetMapping("/ips/{bplcCno}")
-    public List<Ips> getIps(@PathVariable String bplcCno){
+    public Ips getIps(@PathVariable String bplcCno){
         return ipsService.findByBplcCno(bplcCno);
+    }
+
+    @GetMapping("/ips")
+    public Ips getIpsData(@RequestParam("bplcCno") String bplcCno, @RequestParam("tmpCno") String tmpCno){
+        return ipsService.findByBplcCnoAndTmpCno(bplcCno,tmpCno);
     }
 }

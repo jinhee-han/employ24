@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface BplcRepository extends JpaRepository<Bplc,Long> {
 
-    List<Bplc> findByBplcCno(String bplcCno);
+    Bplc findByBplcCno(String bplcCno);
 }

@@ -18,7 +18,7 @@ public class BplcService {
         return bplcRepository.findAll();
     }
 
-    public List<Bplc> findByBplcCno(String bplcCno) {
+    public Bplc findByBplcCno(String bplcCno) {
         return bplcRepository.findByBplcCno(bplcCno);
     }
 }
