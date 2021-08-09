@@ -20,12 +20,12 @@ public class BplcController {
         return bplcService.findAll();
     }*/
 
-   /* @GetMapping("/bplc/{bplcCno}")
+    @GetMapping("/bplc/{bplcCno}")
     public Bplc getBpcl(@PathVariable String bplcCno){
         return bplcService.findByBplcCno(bplcCno);
-    }*/
-     @GetMapping("/bplc")
+    }
+     /*@GetMapping("/bplc")
     public Bplc getBpcl(@RequestParam String bplcCno){
         return bplcService.findByBplcCno(bplcCno);
-    }
+    }*/
 }
