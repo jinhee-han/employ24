@@ -25,8 +25,12 @@ public class IpsController {
         return ipsService.findByBplcCno(bplcCno);
     }
 
-    @PostMapping("/ips")
+    /*@PostMapping("/ips")
     public Ips getIpsData(@RequestBody Ips ips){
         return ipsService.findByBplcCnoAndTmpCnoAndReqstYm(ips);
+    }*/
+    @GetMapping("/ips")
+    public Ips getIpsData(@RequestParam String bplcCno,@RequestParam String tmpCno, @RequestParam String reqstYm){
+        return ipsService.findByBplcCnoAndTmpCnoAndReqstYm(bplcCno,tmpCno,reqstYm);
     }
 }

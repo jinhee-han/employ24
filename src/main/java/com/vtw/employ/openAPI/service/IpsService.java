@@ -22,10 +22,14 @@ public class IpsService {
         return ipsRepository.findByBplcCno(bplcCno);
     }
 
-    public Ips findByBplcCnoAndTmpCnoAndReqstYm(Ips ips) {
+    public Ips findByBplcCnoAndTmpCnoAndReqstYm(String bplcCno, String tmpCno, String reqstYm) {
+        return ipsRepository.findByBplcCnoAndTmpCnoAndReqstYm(bplcCno,tmpCno,reqstYm);
+    }
+
+    /*public Ips findByBplcCnoAndTmpCnoAndReqstYm(Ips ips) {
         String bplcCno = ips.getBplcCno();
         String tmpCno = ips.getTmpCno();
         String reqstYm = ips.getReqstYm();
         return ipsRepository.findByBplcCnoAndTmpCnoAndReqstYm(bplcCno,tmpCno,reqstYm);
-    }
+    }*/
 }
