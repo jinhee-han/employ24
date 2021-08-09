@@ -21,12 +21,12 @@ public class IpsController {
     }*/
 
     @GetMapping("/ips/{bplcCno}")
-    public Ips getIps(@PathVariable String bplcCno){
+    public List<Ips> getIps(@PathVariable String bplcCno){
         return ipsService.findByBplcCno(bplcCno);
     }
 
-    @GetMapping("/ips")
-    public Ips getIpsData(@RequestParam("bplcCno") String bplcCno, @RequestParam("tmpCno") String tmpCno){
-        return ipsService.findByBplcCnoAndTmpCno(bplcCno,tmpCno);
+    @PostMapping("/ips")
+    public Ips getIpsData(@RequestBody Ips ips){
+        return ipsService.findByBplcCnoAndTmpCnoAndReqstYm(ips);
     }
 }

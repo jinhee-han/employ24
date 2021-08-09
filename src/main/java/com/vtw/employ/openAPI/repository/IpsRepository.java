@@ -7,7 +7,9 @@ import java.util.List;
 
 public interface IpsRepository extends JpaRepository<Ips,Long> {
 
-    Ips findByBplcCno(String bplcCno);
+    List<Ips> findByBplcCno(String bplcCno);
 
     Ips findByBplcCnoAndTmpCno(String bplcCno, String tmpCno);
+
+    Ips findByBplcCnoAndTmpCnoAndReqstYm(String bplcCno, String tmpCno, String reqstYm);
 }
