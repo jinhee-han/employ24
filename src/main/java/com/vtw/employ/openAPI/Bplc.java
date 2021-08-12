@@ -9,7 +9,6 @@ import javax.persistence.Id;
 
 @Entity
 @Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString
 public class Bplc {
     @Id
@@ -36,5 +35,17 @@ public class Bplc {
         this.inprCt = inprCt;
         this.bplcRgcd = bplcRgcd;
         this.bplcIdcd = bplcIdcd;
+    }
+
+    public Bplc() {
+        this.id = 0L;
+        this.bplcCno = "";
+        this.bplcIdntfcNo = "";
+        this.cstmrNm = "";
+        this.lsepYn = "";
+        this.poepYn = "";
+        this.inprCt = "";
+        this.bplcRgcd = "";
+        this.bplcIdcd = "";
     }
 }

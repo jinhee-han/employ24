@@ -19,6 +19,6 @@ public class BplcService {
     }
 
     public Bplc findByBplcCno(String bplcCno) {
-        return bplcRepository.findByBplcCno(bplcCno);
+        return bplcRepository.findByBplcCno(bplcCno).orElseGet(Bplc::new);
     }
 }
