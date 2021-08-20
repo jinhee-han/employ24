@@ -9,7 +9,6 @@ import javax.persistence.Id;
 
 @Entity
 @Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString
 public class Ips {
     @Id
@@ -54,5 +53,26 @@ public class Ips {
         this.totWorkHr = totWorkHr;
         this.wagePymntAm = wagePymntAm;
         this.sprmnyAm = sprmnyAm;
+    }
+
+    public Ips() {
+        this.id = 0L;
+        this.bplcCno = "";
+        this.bplcIdntfcNo = "";
+        this.cstmrNm = "";
+        this.beginDe = "";
+        this.endDe = "";
+        this.empmntSpResnCd = "";
+        this.spcfPnprEmmcDtalRscd = "";
+        this.reqstYm = "";
+        this.stdrPdTotWorkhr = "";
+        this.empmntManagtPdTotWorkhr = "";
+        this.shrtenWorkhr = "";
+        this.ttmtSssDyct = "";
+        this.tmpCno = "";
+        this.empmntSmDyct = "";
+        this.totWorkHr = "";
+        this.wagePymntAm = "";
+        this.sprmnyAm = "";
     }
 }

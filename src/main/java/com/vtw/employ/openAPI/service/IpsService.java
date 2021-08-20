@@ -3,33 +3,28 @@ package com.vtw.employ.openAPI.service;
 
 import com.vtw.employ.openAPI.Ips;
 import com.vtw.employ.openAPI.repository.IpsRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class IpsService {
-    @Autowired
-    private IpsRepository ipsRepository;
 
+    private final IpsRepository repository;
+
+    public IpsService(IpsRepository repository) {
+        this.repository = repository;
+    }
 
     public List<Ips> findAll() {
-        return ipsRepository.findAll();
+        return repository.findAll();
     }
 
-    public List<Ips> findByBplcCno(String bplcCno) {
-        return ipsRepository.findByBplcCno(bplcCno);
+    public List<Ips> list(String bplcCno) {
+        return repository.findByBplcCno(bplcCno);
     }
 
-    public Ips findByBplcCnoAndTmpCnoAndReqstYm(String bplcCno, String tmpCno, String reqstYm) {
-        return ipsRepository.findByBplcCnoAndTmpCnoAndReqstYm(bplcCno,tmpCno,reqstYm);
+    public Ips get(String bplcCno, String tmpCno, String reqstYm) {
+        return repository.findByBplcCnoAndTmpCnoAndReqstYm(bplcCno,tmpCno,reqstYm).orElseGet(Ips::new);
     }
-
-    /*public Ips findByBplcCnoAndTmpCnoAndReqstYm(Ips ips) {
-        String bplcCno = ips.getBplcCno();
-        String tmpCno = ips.getTmpCno();
-        String reqstYm = ips.getReqstYm();
-        return ipsRepository.findByBplcCnoAndTmpCnoAndReqstYm(bplcCno,tmpCno,reqstYm);
-    }*/
 }

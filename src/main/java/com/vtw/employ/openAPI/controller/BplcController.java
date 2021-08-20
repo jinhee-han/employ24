@@ -2,30 +2,31 @@ package com.vtw.employ.openAPI.controller;
 
 import com.vtw.employ.openAPI.Bplc;
 import com.vtw.employ.openAPI.service.BplcService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("/employ24/api")
 public class BplcController {
-    @Autowired
-    private BplcService bplcService;
 
-    /*@GetMapping("/bplc")
-    public List<Bplc> getAllBpcl(){
-        return bplcService.findAll();
-    }*/
+    private final BplcService service;
+
+    public BplcController(BplcService service) {
+        this.service = service;
+    }
 
     @GetMapping("/bplc/{bplcCno}")
-    public Bplc getBpcl(@PathVariable String bplcCno){
-        return bplcService.findByBplcCno(bplcCno);
+    public Bplc getPathVariable(@PathVariable String bplcCno){
+        return service.get(bplcCno);
     }
-     /*@GetMapping("/bplc")
-    public Bplc getBpcl(@RequestParam String bplcCno){
-        return bplcService.findByBplcCno(bplcCno);
-    }*/
+
+    @GetMapping("/bplc")
+    public Bplc getRequestParam(@RequestParam String bplcCno){
+        return service.get(bplcCno);
+    }
+
+    @PostMapping("/bplc")
+    public Bplc getRequestBody(@RequestBody Bplc bplc){
+        return service.get(bplc.getBplcCno());
+    }
 }

@@ -18,7 +18,7 @@ public class EmeaBplcService {
         return repository.findAll();
     }
 
-    public List<EmeaBplc> get(String bcno) {
-        return repository.findByBcno(bcno);
+    public EmeaBplc get(String bcno) {
+        return repository.findByBcno(bcno).orElseGet(EmeaBplc::new);
     }
 }

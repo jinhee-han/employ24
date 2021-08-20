@@ -1,9 +1,7 @@
 package com.vtw.employ.openAPI.controller;
 
-
 import com.vtw.employ.openAPI.Ips;
 import com.vtw.employ.openAPI.service.IpsService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,25 +10,26 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 @RequestMapping("/employ24/api")
 public class IpsController {
-    @Autowired
-    private IpsService ipsService;
 
-    /*@GetMapping("/ips")
-    public List<Ips> getAllBpcl(){
-        return ipsService.findAll();
-    }*/
+    private final IpsService service;
+
+    public IpsController(IpsService service) {
+        this.service = service;
+    }
 
     @GetMapping("/ips/{bplcCno}")
-    public List<Ips> getIps(@PathVariable String bplcCno){
-        return ipsService.findByBplcCno(bplcCno);
+    public List<Ips> getPathVariable(@PathVariable String bplcCno){
+        return service.list(bplcCno);
     }
 
-    /*@PostMapping("/ips")
-    public Ips getIpsData(@RequestBody Ips ips){
-        return ipsService.findByBplcCnoAndTmpCnoAndReqstYm(ips);
-    }*/
     @GetMapping("/ips")
-    public Ips getIpsData(@RequestParam String bplcCno,@RequestParam String tmpCno, @RequestParam String reqstYm){
-        return ipsService.findByBplcCnoAndTmpCnoAndReqstYm(bplcCno,tmpCno,reqstYm);
+    public Ips getRequestParam(@RequestParam String bplcCno,@RequestParam String tmpCno, @RequestParam String reqstYm){
+        return service.get(bplcCno,tmpCno,reqstYm);
     }
+
+    @PostMapping("/ips")
+    public Ips getRequestBody(@RequestBody Ips ips){
+        return service.get(ips.getBplcCno(),ips.getTmpCno(),ips.getReqstYm());
+    }
+
 }

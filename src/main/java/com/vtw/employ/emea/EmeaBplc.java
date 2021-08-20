@@ -9,7 +9,6 @@ import javax.persistence.Id;
 
 @Entity
 @Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString
 public class EmeaBplc {
     @Id
@@ -36,5 +35,17 @@ public class EmeaBplc {
         this.nbsp = nbsp;
         this.spam = spam;
         this.rqde = rqde;
+    }
+
+    public EmeaBplc() {
+        this.id = 0L;
+        this.ty = "";
+        this.bcno = "";
+        this.bzmn = "";
+        this.bpcn = "";
+        this.pstcYn = "";
+        this.nbsp = "";
+        this.spam = "";
+        this.rqde = "";
     }
 }
