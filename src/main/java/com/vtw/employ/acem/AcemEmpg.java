@@ -26,12 +26,12 @@ public class AcemEmpg {
     private String nespYn; // 국민취업지원제참여자여부
     private String ecrlYn; // 고용위기지역이직자여부
     private String iarsYn; // 섬지역거주자여부
+    private String unprYn; // 실업기간여부
     private String bgde; //시작일
     private String ende; //종료일
 
     @Builder
-
-    public AcemEmpg(Long id, String bplcSn, String bcno, String bzmn, String bpcn, String tpsn, String tcno, String empmPgid, String empmPgnm, String nespYn, String ecrlYn, String iarsYn, String bgde, String ende) {
+    public AcemEmpg(Long id, String bplcSn, String bcno, String bzmn, String bpcn, String tpsn, String tcno, String empmPgid, String empmPgnm, String nespYn, String ecrlYn, String iarsYn, String unprYn, String bgde, String ende) {
         this.id = id;
         this.bplcSn = bplcSn;
         this.bcno = bcno;
@@ -44,6 +44,7 @@ public class AcemEmpg {
         this.nespYn = nespYn;
         this.ecrlYn = ecrlYn;
         this.iarsYn = iarsYn;
+        this.unprYn = unprYn;
         this.bgde = bgde;
         this.ende = ende;
     }
@@ -61,6 +62,7 @@ public class AcemEmpg {
         this.nespYn = "";
         this.ecrlYn = "";
         this.iarsYn = "";
+        this.unprYn = "";
         this.bgde = "";
         this.ende = "";
     }

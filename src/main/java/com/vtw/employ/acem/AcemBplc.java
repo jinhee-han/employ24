@@ -21,6 +21,7 @@ public class AcemBplc {
     private String bcno; //사업장고객번호
     private String bzmn; //사업장관리번호
     private String bpcn; //사업장명
+    private String bspc; //사업장규모
     private String pstcYn; //우선지원대상기업여부
     private String ltrsYn; //우선지원대상기업여부
     private String mlpzYn; //우선지원대상기업여부
@@ -29,12 +30,13 @@ public class AcemBplc {
     private String rqde; //신청일
 
     @Builder
-    public AcemBplc(Long id, String ty, String bcno, String bzmn, String bpcn, String pstcYn, String ltrsYn, String mlpzYn, String nbsp, String spam, String rqde) {
+    public AcemBplc(Long id, String ty, String bcno, String bzmn, String bpcn, String bspc, String pstcYn, String ltrsYn, String mlpzYn, String nbsp, String spam, String rqde) {
         this.id = id;
         this.ty = ty;
         this.bcno = bcno;
         this.bzmn = bzmn;
         this.bpcn = bpcn;
+        this.bspc = bspc;
         this.pstcYn = pstcYn;
         this.ltrsYn = ltrsYn;
         this.mlpzYn = mlpzYn;
@@ -49,6 +51,7 @@ public class AcemBplc {
         this.bcno = "";
         this.bzmn = "";
         this.bpcn = "";
+        this.bspc = "";
         this.pstcYn = "";
         this.ltrsYn = "";
         this.mlpzYn = "";
