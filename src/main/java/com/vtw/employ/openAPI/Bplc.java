@@ -23,9 +23,10 @@ public class Bplc {
     private String inprCt; //피보험자수
     private String bplcRgcd; //사업장지역코드
     private String bplcIdcd; //사업장업종코드
+    private String bplcMoney;
 
     @Builder
-    public Bplc(Long id, String bplcCno, String bplcIdntfcNo, String cstmrNm, String lsepYn, String poepYn, String inprCt, String bplcRgcd, String bplcIdcd) {
+    public Bplc(Long id, String bplcCno, String bplcIdntfcNo, String cstmrNm, String lsepYn, String poepYn, String inprCt, String bplcRgcd, String bplcIdcd, String bplcMoney) {
         this.id = id;
         this.bplcCno = bplcCno;
         this.bplcIdntfcNo = bplcIdntfcNo;
@@ -35,6 +36,7 @@ public class Bplc {
         this.inprCt = inprCt;
         this.bplcRgcd = bplcRgcd;
         this.bplcIdcd = bplcIdcd;
+        this.bplcMoney = bplcMoney;
     }
 
     public Bplc() {
@@ -47,5 +49,6 @@ public class Bplc {
         this.inprCt = "";
         this.bplcRgcd = "";
         this.bplcIdcd = "";
+        this.bplcMoney = "";
     }
 }
