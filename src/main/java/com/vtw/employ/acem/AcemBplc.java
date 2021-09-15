@@ -28,9 +28,11 @@ public class AcemBplc {
     private String nbsp; //지원인원
     private String spam; //지원금액
     private String rqde; //신청일
+    private String idcd; //업종코드
+    private String arcd; //지역코드
 
     @Builder
-    public AcemBplc(Long id, String ty, String bcno, String bzmn, String bpcn, String bspc, String pstcYn, String ltrsYn, String mlpzYn, String nbsp, String spam, String rqde) {
+    public AcemBplc(Long id, String ty, String bcno, String bzmn, String bpcn, String bspc, String pstcYn, String ltrsYn, String mlpzYn, String nbsp, String spam, String rqde, String idcd, String arcd) {
         this.id = id;
         this.ty = ty;
         this.bcno = bcno;
@@ -43,6 +45,8 @@ public class AcemBplc {
         this.nbsp = nbsp;
         this.spam = spam;
         this.rqde = rqde;
+        this.idcd = idcd;
+        this.arcd = arcd;
     }
 
     public AcemBplc() {
@@ -58,5 +62,7 @@ public class AcemBplc {
         this.nbsp = "";
         this.spam = "";
         this.rqde = "";
+        this.idcd = "";
+        this.arcd = "";
     }
 }
