@@ -18,5 +18,5 @@ BlocklyJS는 Blockly를 기반으로 자바스크립트를 생성하는 프로�
 BlocklyJS의 폴더 구조는 아래와 같습니다.
 
 ## Community
-BlocklyJS 개발을 위한 커뮤니티 공간은 [BlocklyJS.net](https://blocklyjs.net)으로 이동하기 바랍니다.
+BlocklyJS 개발을 위한 커뮤니티 공간은 [dna-platform.com](https://dna-platform.com)으로 이동하기 바랍니다.
  
